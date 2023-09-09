@@ -19,7 +19,7 @@ const Product = () => {
         </div>
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
-          <Card.Text>INR: {product.price}</Card.Text>
+          <Card.Text>INR: ₹{product.price}</Card.Text>
         </Card.Body>
         <Card.Footer>
           <Button variant="primary">Add To Cart</Button>

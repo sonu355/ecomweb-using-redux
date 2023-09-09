@@ -15,7 +15,7 @@ const navbar = () => {
           <Navbar.Toggle />
         <Navbar.Collapse className='justify-content-end'>
             <Navbar.Text>
-                <Nav.Link to="/cart" as={Link}>My Item</Nav.Link>    
+                <Nav.Link to="/cart" as={Link}>My Item 0</Nav.Link>    
             </Navbar.Text>
         </Navbar.Collapse>
       </Container>
