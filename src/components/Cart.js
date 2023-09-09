@@ -1,8 +1,11 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { remove } from '../store/cartSlice'
 
 const Cart = () => {
+  
   const products = useSelector(state => state.cart)
   const cards = products.map((product) => (
     <div className="col-md-12" style={{ marginBottom: '10px'}}>
@@ -15,7 +18,7 @@ const Cart = () => {
           <Card.Text>INR: ₹{product.price}</Card.Text>
         </Card.Body>
         <Card.Footer>
-          <Button variant="danger" >Remove</Button>
+          <Button variant="danger"onClick={() => removeFromCart(product.id)} >Remove</Button>
         </Card.Footer>
       </Card>
     </div>
