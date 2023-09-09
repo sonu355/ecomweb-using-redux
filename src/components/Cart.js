@@ -5,8 +5,14 @@ import { useDispatch } from 'react-redux'
 import { remove } from '../store/cartSlice'
 
 const Cart = () => {
+
+  const dispatch = useDispatch()
+  const removeFromCart = (id) => {
+      dispatch(remove(id))
+  }
   
   const products = useSelector(state => state.cart)
+
   const cards = products.map((product) => (
     <div className="col-md-12" style={{ marginBottom: '10px'}}>
       <Card key={product.id} className="h-100">
