@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   data: [],
@@ -8,10 +8,14 @@ const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    fetchProducts(state, action) {
-      state.data = action.payload;
-    },
+    // fetchProducts(state, action) {
+    //   state.data = action.payload;
+    // },
+
   },
+  extraReducers: (builder) => {
+     
+  }
 });
 
 export const { fetchProducts } = productSlice.actions;
