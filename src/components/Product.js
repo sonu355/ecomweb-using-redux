@@ -7,7 +7,7 @@ import { getProducts } from "../store/productSlice";
 
 const Product = () => {
   const dispatch = useDispatch();
-  const {data: products} = useSelector(state => state.products);
+  const {data: products, status} = useSelector(state => state.products);
 
   useEffect(() => {
       // fetch("https://fakestoreapi.com/products")
@@ -15,6 +15,14 @@ const Product = () => {
       // .then((result) => getProduct(result));
       dispatch(getProducts())
   }, []);
+
+  if(status === "loading"){
+    return <h1>Loading....</h1>
+  }
+
+  if(status === "error"){
+    return <p>Something went wrong please try again later</p>
+  }
 
   const addToCart = (product) => {
     dispatch(add(product))
